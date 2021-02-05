@@ -34,3 +34,11 @@ Quali sono le macchine (i nodi) del nostro cluster provisionati?
 `kubectl apply -f deployment.yaml`{{execute}}
 
 `kubectl apply -f ingress.yaml`{{execute}}
+
+## Chiamiamo i due servizi
+
+Servizio _product-service_ 
+`curl http://shop.example.com/products/CDF5463GG56`
+
+Servizio _shop-service_ che fa una chiamata a _product-service_
+`curl http://shop.example.com/v2/shops/WEDD321/products/CDF5463GG56`{{execute}}
