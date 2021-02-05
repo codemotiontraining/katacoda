@@ -1,0 +1,10 @@
+#! /bin/bash
+
+read -p "Name of the domain [example.com]: " name
+name=${name:-example.com}
+
+echo "127.0.0.1 $name" | sudo tee -a /etc/hosts > /dev/null
+
+echo "Domain $name registered"
+
+

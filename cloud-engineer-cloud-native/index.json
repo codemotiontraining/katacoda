@@ -4,6 +4,15 @@
   "difficulty": "Beginner",
   "time": "15",
   "details": {
+    "assets": {
+       "host01": [
+           {"file": "launch.sh", "target": "/usr/local/bin/", "chmod": "+x"},
+           {"file": "clusterinit", "target": "/usr/local/bin", "chmod": "+x"},
+           {"file": "domain", "target": "/usr/local/bin", "chmod": "+x"},
+           {"file": "ingress.yaml", "target": "/root", "chmod": "+x"},
+           {"file": "deployment.yaml", "target": "/root", "chmod": "+x"}
+       ]
+    },
     "steps": [
       {
         "title": "Step 1",
@@ -11,7 +20,8 @@
       }
     ],
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "courseData": "initenv.sh"
     },
     "finish": {
       "text": "finish.md"

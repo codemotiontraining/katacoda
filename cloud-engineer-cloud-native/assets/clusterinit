@@ -1,0 +1,15 @@
+#! /bin/bash
+
+read -p "Name of the cluster [demo]: " name
+name=${name:-demo}
+
+read -p "Number of master nodes [1]: " masters
+masters=${masters:-1}
+
+read -p "Number of worker nodes [2]: " workers
+workers=${workers:-2}
+
+echo "Creating $name cluster... just wait"
+
+k3d cluster create $name --servers $masters --agents $workers --api-port 6550 -p "80:80@loadbalancer" 1>/dev/null 2>/dev/tty
+

@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shop-ingress
+  annotations:
+    ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+  - host: shop.example.com  
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: product-service-lb
+            port:
+              number: 80   
+      - path: /v2
+        pathType: Prefix
+        backend:
+          service:
+            name: shop-service-lb
+            port:
+              number: 80                
