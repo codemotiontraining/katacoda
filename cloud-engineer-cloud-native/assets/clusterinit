@@ -13,3 +13,4 @@ echo "Creating $name cluster... just wait"
 
 k3d cluster create $name --servers $masters --agents $workers --api-port 6550 -p "80:80@loadbalancer" 1>/dev/null 2>/dev/tty
 
+echo "Cluster $name provisioned."
