@@ -9,17 +9,17 @@ spec:
   - host: shop.example.com  
     http:
       paths:
-      - path: /
+      - path: /product-service
         pathType: Prefix
         backend:
           service:
             name: product-service-lb
             port:
               number: 80   
-      - path: /v2
+      - path: /shop-service
         pathType: Prefix
         backend:
           service:
             name: shop-service-lb
             port:
-              number: 80                
+              number: 80
