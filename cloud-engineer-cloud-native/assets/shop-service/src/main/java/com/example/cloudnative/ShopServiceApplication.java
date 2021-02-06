@@ -13,13 +13,9 @@ import springfox.documentation.spring.web.plugins.Docket;
 public class ShopServiceApplication {
 
 	public static void main(String[] args) {
-		System.setProperty("server.servlet.context-path", "/shop-service");
 		SpringApplication.run(ShopServiceApplication.class, args);
 	}
 
-	/* http://localhost:8080/v3/api-docs
-	*  http://localhost:8080/swagger-ui/index.html#/shop-controller
-	* */
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
