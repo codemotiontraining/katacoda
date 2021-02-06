@@ -10,7 +10,9 @@
            {"file": "clusterinit", "target": "/usr/local/bin", "chmod": "+x"},
            {"file": "domain", "target": "/usr/local/bin", "chmod": "+x"},
            {"file": "ingress.yaml", "target": "/root", "chmod": "+x"},
-           {"file": "deployment.yaml", "target": "/root", "chmod": "+x"}
+           {"file": "deployment.yaml", "target": "/root", "chmod": "+x"},
+           {"file": "product-service", "target": "/root", "chmod": "+x"},
+           {"file": "shop-service", "target": "/root", "chmod": "+x"}
        ]
     },
     "steps": [

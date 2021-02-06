@@ -1,0 +1,8 @@
+server:
+  port: ${PORT:8081}
+  servlet:
+    contextPath: ${SERVER_SERVLET_CONTEXT_PATH:/product-service}
+
+logging:
+  level:
+    com.example.cloudnative: ${LOG_LEVEL:DEBUG}

@@ -1,0 +1,12 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    contextPath: ${SERVER_SERVLET_CONTEXT_PATH:/shop-service}
+
+productservice:
+  url: ${PRODUCT_SERVICE_URL:http://localhost:8081/product-service}
+
+logging:
+  level:
+    com.example.cloudnative: ${LOG_LEVEL:DEBUG}
+
