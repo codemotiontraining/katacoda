@@ -77,9 +77,12 @@ Vediamo l'ingress installato:
 
 Servizio _product-service_ 
 
-`curl http://shop.example.com/products/CDF5463GG56`{{execute}}
-
+`curl http://shop.example.com/product-service/products/CDF5463GG56 | jq`{{execute}}
 
 Servizio _shop-service_ che fa una chiamata a _product-service_:
 
-`curl http://shop.example.com/v2/shops/WEDD321/products/CDF5463GG56`{{execute}}
+`curl http://shop.example.com/shop-service/v2/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+
+
+
+
