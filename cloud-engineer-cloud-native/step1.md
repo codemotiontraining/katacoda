@@ -1,5 +1,4 @@
 
-# Benvenuti in Easycloud!
 
 Ciao, questo terminale ti permettera' di accedere alle funzionalita' del tuo Cloud Provider inventato che si chiama Easycloud. 
 Potrai esercitare le tue nuove abilita' creando un cluster di macchine kubernetes ed effettuando il deploy di servizi web.
