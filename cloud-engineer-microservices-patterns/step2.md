@@ -33,7 +33,7 @@ Questo _manifest_ permette a Docker di avviare il microservizio dei prodotti e i
 
 Avviamo il Docker-compose con:
 
-`docker-compose up`{{execute}}
+`cd ./api-gateway && docker-compose up`{{execute}}
 
 ## Test dell'architettura ##
 

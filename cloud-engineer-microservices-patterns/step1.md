@@ -39,7 +39,7 @@ Questo _manifest_ permette a Docker di avviare il server *eureka* e 3 repliche d
 
 Avviamo il Docker-compose con:
 
-`docker-compose up`{{execute}}
+`cd ./service-discovery && docker-compose up`{{execute}}
 
 ## Test dell'architettura ##
 

@@ -22,12 +22,6 @@ L'intento è quello di avviare il *product-service* ed lo *shop-service* e spegn
 
 ## Docker
 
-Facciamo il _pull_ delle immagini Docker dei servizi coinvolti:
-
-`docker pull codemotiontraining/circuit-breaker-product-service`{{execute}}
-
-`docker pull codemotiontraining/circuit-breaker-shop-service`{{execute}}
-
 Avviamo i servizi tramite Docker:
 
 `docker run --rm -d --network host -e PORT=8081 --name product-service codemotiontraining/circuit-breaker-product-service`{{execute}}
