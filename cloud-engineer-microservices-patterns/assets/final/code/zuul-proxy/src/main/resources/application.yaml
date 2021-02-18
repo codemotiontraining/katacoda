@@ -1,0 +1,39 @@
+server:
+  port: ${PORT:8080}
+spring:
+  application:
+    name: zuul-proxy
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://127.0.0.1:8761/eureka/}
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+ribbon:
+  eureka:
+    enabled: true
+
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  prefix: /api
+  health:
+    enabled: true
+  routes:
+    product-service:
+      path: "/product-service/**"
+      serviceId: product-service
+      stripPrefix: true
+    shop-service:
+      path: "/shop-service/**"
+      serviceId: shop-service
+      stripPrefix: true
+
+logging:
+  level:
+    com.example.microservices: ${LOG_LEVEL:DEBUG}
