@@ -9,7 +9,7 @@
            {"file": "service-discovery", "target": "/root", "chmod": "+x"},
            {"file": "api-gateway", "target": "/root", "chmod": "+x"},
            {"file": "circuit-breaker", "target": "/root", "chmod": "+x"},
-           {"file": "final", "target": "/root", "chmod": "+x"},
+           {"file": "final", "target": "/root", "chmod": "+x"}
        ]
     },
     "steps": [
