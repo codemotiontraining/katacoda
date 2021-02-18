@@ -1,4 +1,3 @@
-## Circuit Breaker Pattern ##
 
 In questa esercitazione andremo ad implementare il pattern *Circuit Breaker* utilizzando Docker.
 

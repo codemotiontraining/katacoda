@@ -1,4 +1,3 @@
-## Architettura a microservizi completa
 
 In questa esercitazione andremo a fare il _deploy_ di un'architettura a microservizi utilizzando i Pattern:
 

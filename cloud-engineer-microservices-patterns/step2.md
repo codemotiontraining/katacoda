@@ -1,4 +1,3 @@
-## API Gateway Pattern ##
 
 In questa esercitazione andremo ad implementare il pattern *API Gateway* utilizzando Docker-compose.
 

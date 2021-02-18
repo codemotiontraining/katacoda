@@ -14,19 +14,19 @@
     },
     "steps": [
       {
-        "title": "Step 1",
+        "title": "Service Discovery Pattern",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "API Gateway Pattern",
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "Circuit Breaker Pattern",
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Deploy di un'architettura completa",
         "text": "step4.md"
       }
     ],

@@ -1,4 +1,3 @@
-## Service Discovery Pattern
 
 In questa esercitazione andremo ad implementare il pattern *Service Discovery* utilizzando Docker-compose.
 
