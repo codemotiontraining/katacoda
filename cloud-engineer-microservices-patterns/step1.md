@@ -18,22 +18,22 @@ I microservizi *product-service* e *shop-service* una volta avviati notificano l
 
 Affinché possano registrarsi al server *eureka* ne devono conoscere l'indirizzo:
 
-`less ./service-discovery/code/discovery-shop-service/src/main/resources/application.yaml`{{execute}}
+`less -N ./service-discovery/code/discovery-shop-service/src/main/resources/application.yml`{{execute}}
 
-`less ./service-discovery/code/discovery-product-service/src/main/resources/application.yaml`{{execute}}
+`less -N ./service-discovery/code/discovery-product-service/src/main/resources/application.yml`{{execute}}
 
 Quando al microservizio *shop-service* chiediamo il dettaglio di un prodotto, questo effettua una chiamata HTTP al microservizio *product-service*.
 In realtà lo *shop-service* non conosce a priori l'indirizzo del *product-service*, pertanto, prima di effettuare la chiamata, interroga il server *eureka* per ottenere l'indirizzo (o gli indirizzi) del *product-service*.
 
 Nel codice sorgente dello *shop-service* abbiamo il _placeholder_ dell'indirizzo IP del *product-service* che viene opportunamente sostituito con il reale indirizzo IP dopo che la libreria client di *eureka* effettua l'interrogazione al Service Registry (linea 78):
 
-`less ./service-discovery/code/discovery-shop-service/src/main/java/com/example/discovery/controller/ShopController.java`{{execute}}
+`less -N ./service-discovery/code/discovery-shop-service/src/main/java/com/example/discovery/controller/ShopController.java`{{execute}}
 
 ## Docker-compose
 
 Diamo uno sguardo al file _docker-compose.yaml_:
 
-`less ./service-discovery/docker-compose.yaml`{{execute}}
+`less -N ./service-discovery/docker-compose.yaml`{{execute}}
 
 Questo _manifest_ permette a Docker di avviare il server *eureka* e 3 repliche del *product-service* oltre che una replica dello *shop-service*.
 

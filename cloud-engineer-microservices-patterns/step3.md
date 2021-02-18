@@ -15,7 +15,7 @@ Abbiamo il codice sorgente dei 3 progetti:
 
 Lo *shop-service* possiede l'indirizzo del *product-service* ed utilizza *Hystrix* come libreria per implementare il Pattern Circuit Breaker:
 
-`less ./circuit-breaker/code/circuit-breaker-shop-service/src/main/java/com/example/circuitbreaker/service/ProductService.java`{{execute}}
+`less -N ./circuit-breaker/code/circuit-breaker-shop-service/src/main/java/com/example/circuitbreaker/service/ProductService.java`{{execute}}
 
 L'intento è quello di avviare il *product-service* ed lo *shop-service* e spegnere il microservizio dei prodotti per renderlo irraggiungibile a quello dei prodotti e, quindi, far intervenire il Circuit Breaker.
 

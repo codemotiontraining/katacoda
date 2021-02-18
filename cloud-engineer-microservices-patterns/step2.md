@@ -17,17 +17,17 @@ L'intento è quello di raggiungere il microservizio dei prodotti tramite un API 
 
 Il Gateway è implementato tramite *zuul* e si aspetta l'indirizzo del microservizio dei prodotti tramite variabile d'ambiente:
 
-`less ./api-gateway/code/api-gateway-zuul-proxy/src/main/resources/application.properties`{{execute}}
+`less -N ./api-gateway/code/api-gateway-zuul-proxy/src/main/resources/application.properties`{{execute}}
 
 Inoltre, abbiamo settato un filtro che permette di fare _proxying_ della chiamata verso il microservizio dei prodotti solo se opportunamente autenticati:
 
-`less ./api-gateway/code/api-gateway-zuul-proxy/src/main/java/com/example/apigateway/filters/PreFilter.java`{{execute}}
+`less -N ./api-gateway/code/api-gateway-zuul-proxy/src/main/java/com/example/apigateway/filters/PreFilter.java`{{execute}}
 
 ## Docker-compose
 
 Diamo uno sguardo al file _docker-compose.yaml_:
 
-`less ./api-gateway/docker-compose.yaml`{{execute}}
+`less -N ./api-gateway/docker-compose.yaml`{{execute}}
 
 Questo _manifest_ permette a Docker di avviare il microservizio dei prodotti e il server *zuul* che funge da API Gateway.
 
