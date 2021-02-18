@@ -28,7 +28,6 @@ Avviamo i servizi tramite Docker:
 
 `docker run --rm -d --network host -e PORT=8080 -e PRODUCT_SERVICE_URL="http://localhost:8081" --name shop-service codemotiontraining/circuit-breaker-shop-service`{{execute}}
 
-
 ## Test dell'architettura ##
 
 Chiediamo al microservizio dei negozi il dettaglio di uno dei prodotti presenti nell'inventario di un negozio specifico affinché entrambi i microservizi siano coinvolti nella chiamata:
@@ -48,3 +47,9 @@ Riavviamo il servizio dei prodotti e ritestiamo la chiamata:
 `docker run --rm -d --network host -e PORT=8081 --name product-service codemotiontraining/circuit-breaker-product-service`{{execute}}
 
 `curl http://localhost:8080/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+
+## Stop dei container
+
+Terminiamo i container avviati:
+
+`docker stop $(docker ps -a -q)`{{execute}}

@@ -37,9 +37,17 @@ Diamo uno sguardo al file _docker-compose.yaml_:
 
 Questo _manifest_ permette a Docker di avviare il server *eureka* e 3 repliche del *product-service* oltre che una replica dello *shop-service*.
 
-Avviamo il Docker-compose con:
+Avviamo il Docker-compose in modalità _detached_ con:
 
-`cd ./service-discovery && docker-compose up`{{execute}}
+`cd ./service-discovery && docker-compose up -d`{{execute}}
+
+Visualizziamo i log:
+
+`docker-compose logs -t -f`{{execute}}
+
+Al termine del processo stacchiamoci dalla visualizzazione dei log con:
+
+`Ctrl + C`
 
 ## Test dell'architettura ##
 
@@ -54,4 +62,10 @@ Facciamo una chiamata al microservizio *shop-service* per ottenere l'inventario 
 Facciamo la chiamata che coinvolge entrambi i microservizi, collegati indirettamente tramite il servizio di Service Discovery offerto dal server *eureka* e chiediamo i dettagli di uno specifico prodotto presente nell'inventario di uno dei negozi:
 
 `curl http://localhost:8080/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+
+## Stop dei container
+
+Terminiamo i container avviati e torniamo sulla directory _home_:
+
+`docker-compose down && cd ..`{{execute}}
 

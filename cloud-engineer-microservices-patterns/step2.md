@@ -31,9 +31,17 @@ Diamo uno sguardo al file _docker-compose.yaml_:
 
 Questo _manifest_ permette a Docker di avviare il microservizio dei prodotti e il server *zuul* che funge da API Gateway.
 
-Avviamo il Docker-compose con:
+Avviamo il Docker-compose in modalità _detached_ con:
 
-`cd ./api-gateway && docker-compose up`{{execute}}
+`cd ./api-gateway && docker-compose up -d`{{execute}}
+
+Visualizziamo i log:
+
+`docker-compose logs -t -f`{{execute}}
+
+Al termine del processo stacchiamoci dalla visualizzazione dei log con:
+
+`Ctrl + C`
 
 ## Test dell'architettura ##
 
@@ -59,3 +67,9 @@ Effettuiamo la chiamata al microservizio dei prodotti tramite l'API Gateway inse
 
 `curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/product-service/products/CDF5463GG56 | jq`{{execute}}
 
+
+## Stop dei container
+
+Terminiamo i container avviati e torniamo sulla directory _home_:
+
+`docker-compose down && cd ..`{{execute}}
