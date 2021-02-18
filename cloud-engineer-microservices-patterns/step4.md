@@ -40,7 +40,7 @@ In realtà lo *shop-service* non conosce a priori l'indirizzo del *product-servi
 
 Nel codice sorgente dello *shop-service* abbiamo il _placeholder_ dell'indirizzo IP del *product-service* che viene opportunamente sostituito con il reale indirizzo IP dopo che la libreria client di *eureka* effettua l'interrogazione al Service Registry. Nel caso in cui la chiamata verso il microservizio dei prodotti non vada a buon fine entra in gioco il Circuit Breaker:
 
-`less -N ./final/code/shop-service/src/main/java/com/example/microservice/service/ProductService.java`{{execute}}
+`less -N ./final/code/shop-service/src/main/java/com/example/microservices/service/ProductService.java`{{execute}}
 
 ## Docker
 
@@ -112,7 +112,16 @@ Spegniamo il microservizio dei prodotti nelle sue 3 repliche per far entrare in 
 
 Verifichiamo che il Circuit Breaker sia attivo:
 
-# chiamiamo il microservizio tramite il proxy allegando il token di autenticazione
-`curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+`curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+
+Riavviamo il microservizio dei prodotti:
+
+`docker run --rm -d --network host -e PORT=8085 -e EUREKA_URL="http://localhost:8761/eureka" --name product-service-1 codemotiontraining/microservices-product-service`{{execute}} 
+
+E ritestiamo la chiamata:
+
+`curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+
+
 
 
