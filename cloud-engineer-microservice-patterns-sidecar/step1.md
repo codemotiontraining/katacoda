@@ -41,7 +41,7 @@ Effettuiamo il deploy del Pod con i due container:
 
 Verifichiamo lo stato dei due container:
 
-`kubectl get pod two-containers --output=yaml`{{execute}}
+`kubectl get pod two-containers --output=yaml | tail -34 | less -N`{{execute}}
 
 Come si evince dal file, il container Debian è già terminato, mentre nginx rimane in fase di *running*:
 ```
@@ -73,11 +73,11 @@ Apriamo una shell sul container nginx:
 
 Installiamo *curl* per poter effettuare le chiamate HTTP al web server:
 
-`apt-get update && apt-get install curl procps`{{execute}}
+`apt-get update && apt-get install curl procps -y`{{execute}}
 
 Facciamo la chiamata a *localhost* con *curl* :
 
-`curl localhost`
+`curl localhost`{{execute}}
 
 Se l'output visualizzato è `Hello from the debian container` allora i due container hanno comunicato correttamente.
 
@@ -87,6 +87,6 @@ Usciamo dalla shell di nginx:
 
 Distruggiamo il Pod:
 
-`kubectl delete pod two-containers`
+`kubectl delete pod two-containers`{{execute}}
 
 
