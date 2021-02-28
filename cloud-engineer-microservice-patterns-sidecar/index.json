@@ -1,0 +1,31 @@
+{
+  "title": "Sidecar pattern con Minikube",
+  "description": "Implementazione del pattern Sidecar con Minikube",
+  "difficulty": "Beginner",
+  "time": "10",
+  "details": {
+    "assets": {
+       "host01": [
+           {"file": "deployment.yaml", "target": "/root", "chmod": "+x"}
+       ]
+    },
+    "steps": [
+      {
+        "title": "Deploy di due Container nello stesso Pod",
+        "text": "step1.md"
+      }
+    ],
+    "intro": {
+      "text": "intro.md"
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "terminal"
+  },
+  "backend": {
+    "imageid": "minikube"
+  }
+}
