@@ -99,11 +99,11 @@ Effettuiamo la chiamata di login con le credenziali corrette:
 
 Ottenuto il _token_ lo alleghiamo alla chiamata verso il *product-service* tramite l'API Gateway *zuul-proxy*:
 
-`curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/product-service/products/CDF5463GG56 | jq`{{execute}}
+`curl -H "Authorization: Bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/product-service/products/CDF5463GG56 | jq`{{execute}}
 
 E verso lo *shop-service* che chiama il *product-service*:
 
-`curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+`curl -H "Authorization: Bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
 
 
 Spegniamo il microservizio dei prodotti nelle sue 3 repliche per far entrare in azione *hystrix*:
@@ -112,7 +112,7 @@ Spegniamo il microservizio dei prodotti nelle sue 3 repliche per far entrare in 
 
 Verifichiamo che il Circuit Breaker sia attivo:
 
-`curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+`curl -H "Authorization: Bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
 
 Riavviamo il microservizio dei prodotti:
 
@@ -120,7 +120,7 @@ Riavviamo il microservizio dei prodotti:
 
 E ritestiamo la chiamata:
 
-`curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
+`curl -H "Authorization: Bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/api/shop-service/shops/WEDD321/products/CDF5463GG56 | jq`{{execute}}
 
 
 

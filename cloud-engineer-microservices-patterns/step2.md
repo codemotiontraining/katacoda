@@ -64,7 +64,7 @@ Rifacciamo il _login_ inserendo nome utente e password corretti e recuperando il
 
 Effettuiamo la chiamata al microservizio dei prodotti tramite l'API Gateway inserendo negli _Headers_ della chiamata il _token_ ottenuto dalla chiamata precedente:
 
-`curl -H "Authorization: bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/product-service/products/CDF5463GG56 | jq`{{execute}}
+`curl -H "Authorization: Bearer Fr45dgUDJs8e3hdjke3idhj3hdk8hd" http://localhost:8080/product-service/products/CDF5463GG56 | jq`{{execute}}
 
 
 ## Stop dei container
