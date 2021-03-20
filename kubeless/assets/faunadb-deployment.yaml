@@ -1,0 +1,61 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: faunadb
+  labels:
+    app: faunadb
+    tier: database
+spec:
+  ports:
+    - port: 8443
+      targetPort: 8443
+  selector:
+    app: faunadb
+    tier: database
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: faunadb-pv-claim
+  labels:
+    app: faunadb
+    tier: database
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: faunadb
+  labels:
+    app: faunadb
+    tier: database
+spec:
+  selector:
+    matchLabels:
+      app: faunadb
+      tier: database
+  serviceName: "faunadb"
+  template:
+    metadata:
+      labels:
+        app: faunadb
+        tier: database
+    spec:
+      containers:
+      - image: fauna/faunadb:4.0.1
+        name: faunadb
+        ports:
+        - containerPort: 8443
+          name: faunadb
+        volumeMounts:
+        - name: faunadb-persistent-storage
+          mountPath: /var/lib/faunadb
+      volumes:
+      - name: faunadb-persistent-storage
+        persistentVolumeClaim:
+          claimName: faunadb-pv-claim
