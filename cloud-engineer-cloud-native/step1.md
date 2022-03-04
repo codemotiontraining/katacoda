@@ -12,10 +12,14 @@ Accediamo alle risorse scaricate:
 
 `cd ~/katacoda/cloud-engineer-cloud-native/assets`{{execute}}
 
+Prepariamo l'ambiente:
+
+`./prepare.sh`{{execute}}
+
 ## Lanciamo l'ambiente Easycloud
 Entriamo nel nostro ambiente cloud simulato:
 
-`launch.sh`{{execute}}
+`./launch.sh`{{execute}}
 
 ## Crea il tuo primo cluster kubernetes
 Creiamo un cluster kubernetes con il tool di Easycloud `clusterinit`
