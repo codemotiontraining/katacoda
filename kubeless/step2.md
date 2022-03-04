@@ -1,7 +1,18 @@
 
 Le funzioni serverless si sposano bene con l'utilizzo di Database Serverless. In questo esempio deployeremo FaunaDB, il database serverless sviluppato dai creatori di Twitter e vi inseriremo dei dati di esempio.
 
+## Scarichiamo le risorse
+
+Scarichiamo le risorse dal repository Github di Codemotion:
+
+`git clone https://github.com/codemotiontraining/katacoda`{{execute}}
+
+Spostiamoci nei file scaricati:
+
+`cd ~/katacoda/kubeless/assets`{{execute}}
+
 ## Deployment con Kubectl
+
 Visualizziamo il nostro deployment:
 `less faunadb-deployment.yaml`{{execute}}
 
