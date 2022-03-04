@@ -1,6 +1,16 @@
 
 In questa esercitazione andremo ad implementare il pattern *Service Discovery* utilizzando Docker-compose.
 
+## Scarichiamo le risorse
+
+Scarichiamo le risorse tramite il repository Github di Codemotion:
+
+`git clone https://github.com/codemotiontraining/katacoda`{{execute}}
+
+Spostiamoci nella cartella di lavoro:
+
+`cd ~/katacoda/cloud-engineer-microservices-patterns/assets`{{execute}}
+
 ## Codice sorgente
 
 Diamo uno sguardo al codice sorgente. Possiamo utilizzare l'editor o il terminale.
