@@ -1,6 +1,8 @@
 #! /bin/bash
 
-source .bashrc
+curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+snap install kubectl --classic
+source ~/.bashrc
 
 echo " __    __     _                           ";
 echo "/ / /\ \ \___| | ___ ___  _ __ ___   ___  ";
