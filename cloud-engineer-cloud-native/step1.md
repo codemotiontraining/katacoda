@@ -3,6 +3,15 @@
 Ciao, questo terminale ti permettera' di accedere alle funzionalita' del tuo Cloud Provider inventato che si chiama Easycloud. 
 Potrai esercitare le tue nuove abilita' creando un cluster di macchine kubernetes ed effettuando il deploy di servizi web.
 
+## Scarichiamo le risorse
+Scarichiamo le risorse necessarie all'esercitazione dal repository Github di Codemotion:
+
+`git clone https://github.com/codemotiontraining/katacoda`{{execute}}
+
+Accediamo alle risorse scaricate:
+
+`cd ~/katacoda/cloud-engineer-cloud-native/assets`{{execute}}
+
 ## Lanciamo l'ambiente Easycloud
 Entriamo nel nostro ambiente cloud simulato:
 
