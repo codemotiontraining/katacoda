@@ -12,6 +12,10 @@ Accediamo alle risorse scaricate:
 
 `cd ~/katacoda/cloud-engineer-cloud-native/assets`{{execute}}
 
+Aggiorniamo la variabile d'ambiente `$PATH` con il percorso corrente:
+
+`export PATH=$PATH:$PWD`{{execute}}
+
 Prepariamo l'ambiente:
 
 `./prepare.sh`{{execute}}
