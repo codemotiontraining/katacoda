@@ -2,8 +2,6 @@
 
 echo "Preparing the environment..."
 
-export PATH=$PATH:/root/katacoda/cloud-engineer-cloud-native/assets
-
 export TAG='v4.4.0'
 curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
 
